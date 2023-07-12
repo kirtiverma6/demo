@@ -1,0 +1,49 @@
+# Run the docker file saved in current folder
+# it creates an imange in the docker
+# docker desktop allow tcp port
+# jenkins remove password from config .xml
+
+Helpfull command
+
+If the nano command is not available in the Jenkins container, you can try using the vi editor instead. Here's an alternative approach:
+Find the name or ID of the Jenkins container by running the following command:
+
+Copy code
+1.             docker ps
+Use the docker exec command to start a shell session in the Jenkins container:
+
+bash
+Copy code
+2.             docker exec -it <container_name_or_id> bash
+
+Once inside the container, navigate to the Jenkins home directory:
+
+bash
+Copy code
+3.              cd /var/jenkins_home
+Edit the config.xml file using the vi editor:
+
+arduino
+Copy code
+4.              vi config.xml
+Press i to enter insert mode and make the necessary changes to the file.
+
+Press Esc to exit insert mode, and then type :wq to save the changes and exit the editor.
+
+Restart the Jenkins container:
+
+php
+Copy code
+6.             docker restart <container_name_or_id>
+
+
+NOTE : Installation on docker desktop machine : 
+
+docker exec -u root -it <container_id_or_name> apt-get update
+docker exec -u root -it <container_id_or_name> apt-get install -y vim
+
+
+docker run --name jenkins-lts -d -p 8080:8080 -p 50000:50000 --group-add 999 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=tcp://host.docker.internal:2375 my-jenkins
+
+	
+	
