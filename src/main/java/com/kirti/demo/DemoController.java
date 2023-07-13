@@ -16,9 +16,9 @@ public class DemoController {
 	        String greeting;
 
 	        if (hour >= 0 && hour < 12) {
-	            greeting = "Good morning";
+	            greeting = " Good morning ";
 	        } else {
-	            greeting = "Good afternoon";
+	            greeting = " Good afternoon ";
 	        }
 	        
 	        return greeting + " Kirti Verma  Welcome to COMP367" ;
