@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 	
-	@GetMapping("/")
+	@GetMapping("/kirti")
 	public String greeting() {
 		
 		 LocalTime currentTime = LocalTime.now();
